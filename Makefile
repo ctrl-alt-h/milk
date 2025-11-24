@@ -5,7 +5,8 @@ CFLAGS 	= -Wall -Wextra -g
 
 SOURCE_DIR 	= ./src
 BUILD_DIR  	= ./build
-SOURCE_FILES  	= $(SOURCE_DIR)/main.c
+SOURCE_FILES  	= $(SOURCE_DIR)/main.c \
+		  $(SOURCE_DIR)/tracking.c
 
 $(PROJECT): config
 	$(CC) $(CFLAGS) $(SOURCE_FILES) -o $(BUILD_DIR)/$@
