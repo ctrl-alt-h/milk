@@ -11,7 +11,7 @@ void mk_inc_counter(int *ticket_counter, const int ticket_type) {
 	ticket_counter[ticket_type]++;
 }
 
-void mk_dec_counter(int *ticket_counter, int ticket_type) {
+void mk_dec_counter(int *ticket_counter, const int ticket_type) {
 	ticket_counter[ticket_type]--;
 }
 
