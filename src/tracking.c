@@ -1,7 +1,7 @@
 #include "tracking.h"
 #include <stdio.h>
 
-static char *MK_TICKET_STRINGS[MK_TICKET_TYPE_COUNT] = {
+char *MK_TICKET_STRINGS[MK_TICKET_TYPE_COUNT] = {
 	"Water Damage",
 	"SolidWorks",
 	"Broken Screen",
