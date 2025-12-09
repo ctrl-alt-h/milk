@@ -14,7 +14,7 @@ struct mk_ticket_cat {
 /* ----- MEMORY MANAGEMENT ----- */
 
 /* Appends and inits dynamic struct mk_ticket_cat to p (array ptr). */
-void mk_alloc_category(struct mk_ticket_cat **arr_ptr, size_t *n, const char *title);
+void mk_alloc_category(struct mk_ticket_cat **p, size_t *n, const char *title);
 
 /* ----- STATE MANAGEMENT ----- */
 void mk_inc_counter(struct mk_ticket_cat *cat_ptr);
