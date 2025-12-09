@@ -1,24 +1,34 @@
 #include "tracking.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-char *MK_TICKET_STRINGS[MK_TICKET_TYPE_COUNT] = {
-	"Water Damage",
-	"SolidWorks",
-	"Broken Screen",
-};
+void mk_alloc_category(struct mk_ticket_cat **p, size_t *n, const char *title) {
+	(*n)++;
 
-void mk_inc_counter(int *ticket_counter, const int ticket_type) {
-	ticket_counter[ticket_type]++;
+	struct mk_ticket_cat *new_arr = realloc(*p, *n * sizeof(struct mk_ticket_cat));
+	if (new_arr == NULL) {
+		fprintf(stderr, "Error: couldn't allocate memory\n");
+		return;
+	}
+
+	new_arr[*n - 1].title = title;
+	new_arr[*n - 1].count = 0;
+
+	*p = new_arr;
 }
 
-void mk_dec_counter(int *ticket_counter, const int ticket_type) {
-	ticket_counter[ticket_type]--;
+void mk_inc_counter(struct mk_ticket_cat *cat) {
+	cat->count++;
 }
 
-void mk_print_status(const int *ticket_counter, const int size) {
+void mk_dec_counter(struct mk_ticket_cat *cat) {
+	cat->count--;
+}
+
+void mk_print_status(const struct mk_ticket_cat *arr, size_t n) {
 	printf("Number of each recorded ticket\n");
-	for (int i = 0; i < size; ++i) {
-		printf("%s:\t", MK_TICKET_STRINGS[i]);
-		printf("%d\n", ticket_counter[i]);
+	for (size_t i = 0; i < n; ++i) {
+		printf("%s:\t", arr[i].title);
+		printf("%d\n", arr[i].count);
 	}
 }

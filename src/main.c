@@ -11,10 +11,8 @@ int main(int argc, char **argv) {
 		return 0;
 	}
 
-	int ticket_counter[MK_TICKET_TYPE_COUNT];
-	for (int i = 0; i < MK_TICKET_TYPE_COUNT; ++i) {
-		ticket_counter[i] = 0;
-	}
+	struct mk_ticket_cat *ticket_cats = NULL;
+	size_t n_ticket_cats = 0;
 
 	// TODO: Parse arguments
 }
