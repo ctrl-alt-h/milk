@@ -1,3 +1,6 @@
+// tracking.c - Implementation for ticket category handling.
+// Copyright (C) 2025, Jonathan Henning
+
 #include "tracking.h"
 #include <stdio.h>
 #include <stdlib.h>
