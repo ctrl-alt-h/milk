@@ -2,6 +2,7 @@ PROJECT := milk
 
 CC 	= gcc
 CFLAGS 	= -Wall -Wextra -g
+LDFLAGS = -lraylib
 
 SOURCE_DIR 	= ./src
 BUILD_DIR  	= ./build
@@ -9,7 +10,7 @@ SOURCE_FILES  	= $(SOURCE_DIR)/main.c \
 		  $(SOURCE_DIR)/tracking.c
 
 $(PROJECT): config
-	$(CC) $(CFLAGS) $(SOURCE_FILES) -o $(BUILD_DIR)/$@
+	$(CC) $(CFLAGS) $(SOURCE_FILES) -o $(BUILD_DIR)/$@ $(LDFLAGS)
 
 config:
 	mkdir -p $(BUILD_DIR)

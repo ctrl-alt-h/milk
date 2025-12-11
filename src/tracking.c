@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void mk_alloc_category(struct mk_ticket_cat **p, size_t *n, const char *title) {
+void mk_alloc_category(struct mk_ticket_cat **arr_ptr, size_t *n, const char *title) {
 	(*n)++;
 
-	struct mk_ticket_cat *new_arr = realloc(*p, *n * sizeof(struct mk_ticket_cat));
+	struct mk_ticket_cat *new_arr = realloc(*arr_ptr, *n * sizeof(struct mk_ticket_cat));
 	if (new_arr == NULL) {
 		fprintf(stderr, "Error: couldn't allocate memory\n");
 		return;
@@ -17,7 +17,7 @@ void mk_alloc_category(struct mk_ticket_cat **p, size_t *n, const char *title) {
 	new_arr[*n - 1].title = title;
 	new_arr[*n - 1].count = 0;
 
-	*p = new_arr;
+	*arr_ptr = new_arr;
 }
 
 void mk_inc_counter(struct mk_ticket_cat *cat) {
