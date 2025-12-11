@@ -4,11 +4,11 @@
 <summary>Arch Linux</summary>
 
 ```
-git clone https://github.com/ctrl-alt-h/milk.git
+git clone --recurse-submodules https://github.com/ctrl-alt-h/milk.git
 mkdir -p milk/build
 cd milk/build
 
-sudo pacman -S base-devel raylib cmake
+sudo pacman -S base-devel cmake
 cmake ..
 cmake --build .
 ```
