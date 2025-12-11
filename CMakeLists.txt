@@ -5,8 +5,9 @@ project(milk C)
 find_package(raylib REQUIRED)
 
 set(SOURCE_FILES
-    src/main.c
-    src/tracking.c
+	src/main.c
+	src/tracking.c
+	src/frontend.c
 )
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
