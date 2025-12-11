@@ -5,9 +5,11 @@
 
 ```
 git clone https://github.com/ctrl-alt-h/milk.git
-cd milk
+mkdir -p milk/build
+cd milk/build
 
-sudo pacman -S base-devel raylib
-make
+sudo pacman -S base-devel raylib cmake
+cmake ..
+cmake --build .
 ```
 </details>
