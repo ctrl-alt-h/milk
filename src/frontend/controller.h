@@ -4,7 +4,7 @@
 #ifndef _CONTROLLER_H
 #define _CONTROLLER_H
 
-/* callback function types */
+/* ----- CALLBACK TYPES ----- */
 typedef void (*mk_add_ticket_callback)(const char *title);
 
 struct mk_controller_callbacks {
@@ -13,7 +13,7 @@ struct mk_controller_callbacks {
 
 void mk_controller_init(struct mk_controller_callbacks *cbs);
 
-/* function definitions */
+/* ----- CALLBACK DEFINITIONS ----- */
 void mk_controller_add_ticket(const char *title);
 
 #endif
