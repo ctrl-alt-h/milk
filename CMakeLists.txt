@@ -7,7 +7,8 @@ add_subdirectory(raylib)
 set(SOURCE_FILES
 	src/main.c
 	src/tracking.c
-	src/frontend.c
+	src/frontend/frontend.c
+	src/frontend/controller.c
 )
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
