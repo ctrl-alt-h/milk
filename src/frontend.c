@@ -1,15 +1,20 @@
 #include "frontend.h"
 #include <raylib.h>
 
-static void mk_update(const struct mk_ticket_cat *arr_ptr, size_t n) {
+static void mk_update(const struct mk_frontend *f) {
 }
 
-static void mk_draw(const struct mk_ticket_cat *arr_ptr, size_t n) {
+static void mk_draw(const struct mk_frontend *f) {
 	ClearBackground(RAYWHITE);
 	DrawText("MILK", 190, 200, 20, LIGHTGRAY);
 }
 
-void mk_draw_loop(const struct mk_ticket_cat *arr_ptr, size_t n) {
+void mk_frontend_init(struct mk_frontend *f) {
+	f->ticket_cats = NULL;
+	f->n_ticket_cats = 0;
+}
+
+void mk_draw_loop(const struct mk_frontend *f) {
 	SetConfigFlags(FLAG_WINDOW_RESIZABLE);
 
 	const int screenWidth  = 800;
@@ -20,9 +25,9 @@ void mk_draw_loop(const struct mk_ticket_cat *arr_ptr, size_t n) {
 
 	while (!WindowShouldClose())
 	{
-		mk_update(arr_ptr, n);
+		mk_update(f);
 		BeginDrawing();
-		mk_draw(arr_ptr, n);
+		mk_draw(f);
 		EndDrawing();
 	}
 	CloseWindow();

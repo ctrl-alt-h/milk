@@ -11,10 +11,10 @@ int main(int argc, char **argv) {
 		return 0;
 	}
 
-	struct mk_ticket_cat *ticket_cats = NULL;
-	size_t n_ticket_cats = 0;
+	struct mk_frontend frontend;
 
-	mk_draw_loop(ticket_cats, n_ticket_cats);
+	mk_frontend_init(&frontend);
+	mk_draw_loop(&frontend);
 
 	return 0;
 }
