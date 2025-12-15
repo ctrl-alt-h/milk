@@ -7,14 +7,11 @@ static void mk_update(const struct mk_frontend *f) {
 static void mk_draw(const struct mk_frontend *f) {
 	ClearBackground(RAYWHITE);
 	DrawText("MILK", 190, 200, 20, LIGHTGRAY);
-
-	f->callbacks->add_ticket("test");
 }
 
-void mk_frontend_init(struct mk_frontend *f, const struct mk_controller_callbacks *cbs) {
+void mk_frontend_init(struct mk_frontend *f) {
 	f->ticket_cats = NULL;
 	f->n_ticket_cats = 0;
-	f->callbacks = cbs;
 }
 
 void mk_draw_loop(const struct mk_frontend *f) {
