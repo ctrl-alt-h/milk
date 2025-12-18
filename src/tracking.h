@@ -4,12 +4,7 @@
 #ifndef _TRACKING_H
 #define _TRACKING_H
 
-#include <stddef.h>
-
-struct mk_ticket_cat {
-	const char  *title;
-	unsigned int count;
-};
+#include "context.h"
 
 /* ----- MEMORY MANAGEMENT ----- */
 
