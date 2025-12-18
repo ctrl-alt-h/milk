@@ -1,7 +1,7 @@
 #ifndef _FRONTEND_H
 #define _FRONTEND_H
 
-#include "tracking.h"
+#include "../tracking.h"
 
 struct mk_frontend {
 	struct mk_ticket_cat *ticket_cats;

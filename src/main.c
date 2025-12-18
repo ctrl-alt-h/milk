@@ -1,4 +1,4 @@
-#include "frontend.h"
+#include "frontend/frontend.h"
 #include <stdio.h>
 
 void mk_print_help(void) {
